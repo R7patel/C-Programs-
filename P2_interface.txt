@@ -1,0 +1,25 @@
+using System;
+namespace sampleInterface
+{
+   public interface Iabc
+   {
+      // interface members
+      void Display();
+   }
+   
+   public class A:Iabc
+	{
+		public  void Display()
+		{
+			Console.WriteLine("The method of interface is  impliminted");
+		}
+	}
+   class EntryClass
+   {
+	public static void Main()
+	{
+		A a=new A();
+		a.Display();
+	}
+   }
+}

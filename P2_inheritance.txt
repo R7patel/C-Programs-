@@ -1,0 +1,50 @@
+using System;
+namespace InheritanceApplication
+{
+   class Shape 
+   {
+      protected Shape(int w,int h)
+	{
+		width=w;
+		height=h;
+	}
+      protected int width;
+      protected int height;
+
+      public void Display()
+      {
+         Console.WriteLine("Height: {0}", height);
+         Console.WriteLine("Width: {0}", width);
+      }
+   }
+
+   // Derived class
+   class Rectangle: Shape
+   {
+	public Rectangle(int w,int h):base(w,h)
+	{
+	}
+
+      public int getArea()
+      { 
+         return (width * height); 
+      }
+
+	new public void Display()
+      {
+         base.Display();
+         Console.WriteLine("Area: {0}", getArea());
+      }
+   }
+   
+   class RectangleTester
+   {
+      static void Main(string[] args)
+      {
+         Rectangle Rect = new Rectangle(4,5);
+         // Print the area and size of the object.
+	 Rect.Display();
+         Console.ReadKey();
+      }
+   }
+}
